@@ -29,9 +29,9 @@ const addItem = () => {
         <el-form-item>
           <el-input type="text" v-model="newItemText" placeholder="Agregar nueva tarea" />
         </el-form-item>
-        <!-- <div class=" date-picker">
-          <el-date-picker v-model="value1" type="date" placeholder="Hoy" :default-value="new Date(2023, 9, 1)" />
-        </div> -->
+        <!-- <div class=" date-picker"> -->
+          <!-- <el-date-picker v-model="value1" type="date" placeholder="Hoy" :default-value="new Date(2023, 9, 1)" /> -->
+        <!-- </div> -->
         <div class="pb-[318px]"></div>
         <div class="ml-[167px]">
           <el-button type="primary" @click.prevent="addItem" class="custom-button ">

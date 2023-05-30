@@ -6,8 +6,8 @@ export function storeItem() {
     // const router = useRouter();
     const newItemText = ref('');
     const categories = reactive([
-        { id: 1, titulo: 'Business', colorProg: 'business' },
-        { id: 2, titulo: 'Personal', colorProg: 'personal' },
+        { id: 1, titulo: 'Business', color: '#d623d6' },
+        { id: 2, titulo: 'Personal', color: '#53b6f8' },
     ])
     const items = reactive([
         { id: 1, text: 'Dayly meeting with team', complete: false, Categories: 'business' },

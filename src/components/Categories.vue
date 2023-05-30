@@ -1,13 +1,6 @@
 <script setup>
 import { useStoreItem } from '../store';
 
-const prop = defineProps({
-    color: {
-        type: String,
-        // default: '#999999'
-    }
-})
-
 </script>
 
 <template>
@@ -19,7 +12,7 @@ const prop = defineProps({
                     <div class=" text-sm text-gray-400">40 task</div>
                     <div class=" text-lg font-bold">{{ item.titulo }}</div>
                     <div class=" demo-progress " >
-                        <el-progress :percentage="60" :show-text="false" :color="color"/>
+                        <el-progress :percentage="60" :show-text="false" :color="item.color"/>
                     </div>
                 </el-card>
             </li>
