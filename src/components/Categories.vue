@@ -1,4 +1,12 @@
 <script setup>
+import { useStoreItem } from '../store';
+
+const prop = defineProps({
+    color: {
+        type: String,
+        // default: '#999999'
+    }
+})
 
 </script>
 
@@ -6,32 +14,15 @@
     <p class=" text-xs text-gray-400 pb-2">CATEGORIES</p>
     <el-scrollbar>
         <div class="  scrollbar-flex-content">
-            <el-card class=" box-card scrollbar-demo-item card-item ">
-                <div class=" text-sm text-gray-400">40 task</div>
-                <div class=" text-lg font-bold">Business</div>
-                <div class=" demo-progress " >
-                    <el-progress :percentage="60" :show-text="false" color="#d623d6"/>
-                </div>
-            </el-card>
-            <el-card class=" box-card scrollbar-demo-item card-item ">
-                <div class=" text-sm text-gray-400">18 task</div>
-                <div class=" text-lg font-bold">Personal</div>
-                <div class=" demo-progress">
-                    <el-progress :percentage="60" :show-text="false"/>
-                </div>
-            </el-card>
-            <!-- <el-card class=" w-[150px]  scrollbar-demo-item card-item ">
-                <div>40 task</div>
-                <div>Businness</div>
-            </el-card>
-            <el-card class=" w-[150px]  scrollbar-demo-item card-item ">
-                <div>40 task</div>
-                <div>Businness</div>
-            </el-card>
-            <el-card class=" w-[150px]  scrollbar-demo-item  card-item ">
-                <div>40 task</div>
-                <div>Businness</div>
-            </el-card> -->
+            <li v-for="item in useStoreItem.categories" :key="item.id" class="scrollbar-demo-item box-card ">
+                <el-card class=" card-item">
+                    <div class=" text-sm text-gray-400">40 task</div>
+                    <div class=" text-lg font-bold">{{ item.titulo }}</div>
+                    <div class=" demo-progress " >
+                        <el-progress :percentage="60" :show-text="false" :color="color"/>
+                    </div>
+                </el-card>
+            </li>
         </div>
     </el-scrollbar>
 </template>
@@ -58,13 +49,19 @@
  .box-card {
     width: 180px;
  }
+ .card-item {
+    border-radius: 1rem;
+ }
 .demo-progress .el-progress--line {
   margin-bottom: 15px;
   width: 140px;
 
 }
-.color{
+.business{
     color:#d623d6
+}
+.personal{
+    color:#53b6f8
 }
 </style>
 
